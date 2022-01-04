@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  employeeapi:
+    image: ${DOCKER_REGISTRY-}employeeapi
+    ports:
+        - "10005:443"
+    build:
+      context: .
+      dockerfile: EmployeeAPI/Dockerfile
+
+  authapi:
+    image: ${DOCKER_REGISTRY-}authapi
+    ports:
+        - "10006:443"
+    build:
+      context: .
+      dockerfile: AuthAPI/Dockerfile
